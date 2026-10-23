@@ -1,0 +1,17 @@
+{
+  "runcontract": 1,
+  "services": [
+    {
+      "name": "worker",
+      "dir": "worker",
+      "stack": "python",
+      "kind": "worker",
+      "install": [["${python}", "-m", "pip", "install", "-q", "-r", "requirements.txt"]],
+      "start": ["${python}", "main.py"],
+      "test": [["${python}", "-m", "pytest"]],
+      "env": {
+        "DATABASE_PATH": {"dev": "../data/jobs.db"}
+      }
+    }
+  ]
+}
