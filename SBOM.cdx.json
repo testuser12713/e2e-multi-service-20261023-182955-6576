@@ -1,0 +1,371 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:f6f45b22-6a87-4a12-bbf6-cb594b2fb109",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-23T16:48:41Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "anchore",
+          "name": "syft",
+          "version": "1.51.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "20e1156615475b2f",
+      "type": "file",
+      "name": "e2e-multi-service-20261023-182955-6576"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:github/actions/checkout@v4?package-id=fa2e67b8c20f75f3",
+      "type": "library",
+      "name": "actions/checkout",
+      "version": "v4",
+      "cpe": "cpe:2.3:a:actions\\/checkout:actions\\/checkout:v4:*:*:*:*:*:*:*",
+      "purl": "pkg:github/actions/checkout@v4",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "github-actions-usage-cataloger"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "github-action"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "github-actions-use-statement"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/.github.flows/ci.yml"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:github/actions/setup-node@v4?package-id=0655ed1d97886acf",
+      "type": "library",
+      "name": "actions/setup-node",
+      "version": "v4",
+      "cpe": "cpe:2.3:a:actions\\/setup-node:actions\\/setup-node:v4:*:*:*:*:*:*:*",
+      "purl": "pkg:github/actions/setup-node@v4",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "github-actions-usage-cataloger"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "github-action"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "github-actions-use-statement"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup-node:actions\\/setup_node:v4:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup_node:actions\\/setup-node:v4:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup_node:actions\\/setup_node:v4:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup:actions\\/setup-node:v4:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup:actions\\/setup_node:v4:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/.github.flows/ci.yml"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:github/actions/setup-python@v5?package-id=0ac68409cceaeece",
+      "type": "library",
+      "name": "actions/setup-python",
+      "version": "v5",
+      "cpe": "cpe:2.3:a:actions\\/setup-python:actions\\/setup-python:v5:*:*:*:*:*:*:*",
+      "purl": "pkg:github/actions/setup-python@v5",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "github-actions-usage-cataloger"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "github-action"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "github-actions-use-statement"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup-python:actions\\/setup_python:v5:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup_python:actions\\/setup-python:v5:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup_python:actions\\/setup_python:v5:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup:actions\\/setup-python:v5:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:actions\\/setup:actions\\/setup_python:v5:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/.github.flows/ci.yml"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:npm/react@19.3.1?package-id=95e8eb51d5109558",
+      "type": "library",
+      "name": "react",
+      "version": "19.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "cpe": "cpe:2.3:a:react:react:19.3.1:*:*:*:*:*:*:*",
+      "purl": "pkg:npm/react@19.3.1",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "javascript-lock-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "javascript"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "npm"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "javascript-npm-package-lock-entry"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/web/package-lock.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:npm/react-dom@19.3.1?package-id=236e0fa38db8b1f7",
+      "type": "library",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "cpe": "cpe:2.3:a:react-dom:react-dom:19.3.1:*:*:*:*:*:*:*",
+      "purl": "pkg:npm/react-dom@19.3.1",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "javascript-lock-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "javascript"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "npm"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "javascript-npm-package-lock-entry"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:react-dom:react_dom:19.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:react_dom:react-dom:19.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:react_dom:react_dom:19.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:react:react-dom:19.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:react:react_dom:19.3.1:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/web/package-lock.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:npm/scheduler@0.28.0?package-id=6b7299cdb7058247",
+      "type": "library",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "cpe": "cpe:2.3:a:scheduler:scheduler:0.28.0:*:*:*:*:*:*:*",
+      "purl": "pkg:npm/scheduler@0.28.0",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "javascript-lock-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "javascript"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "npm"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "javascript-npm-package-lock-entry"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/web/package-lock.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:npm/textanalyse-web@0.1.0?package-id=7ab1fb9693bde365",
+      "type": "library",
+      "name": "textanalyse-web",
+      "version": "0.1.0",
+      "cpe": "cpe:2.3:a:textanalyse-web:textanalyse-web:0.1.0:*:*:*:*:*:*:*",
+      "purl": "pkg:npm/textanalyse-web@0.1.0",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "javascript-lock-cataloger"
+        },
+        {
+          "name": "syft:package:language",
+          "value": "javascript"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "npm"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "javascript-npm-package-lock-entry"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:textanalyse-web:textanalyse_web:0.1.0:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:textanalyse_web:textanalyse-web:0.1.0:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:textanalyse_web:textanalyse_web:0.1.0:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:textanalyse:textanalyse-web:0.1.0:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:cpe23",
+          "value": "cpe:2.3:a:textanalyse:textanalyse_web:0.1.0:*:*:*:*:*:*:*"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/web/package-lock.json"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7561d461b00ff11d",
+      "type": "file",
+      "name": "./.github.flows/ci.yml",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "34c597ff4c871c19c18c44b82a6df3eb575afc2e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "a5acc2b048656cf4bcab361a0d8f54b2411a3730e187907841af5e92b9295c84"
+        }
+      ]
+    },
+    {
+      "bom-ref": "fe1e53952344593b",
+      "type": "file",
+      "name": "./web/package-lock.json",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "59fa190a950a84f99ac946480c96d5389fc37cc5"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f5f94386247db922defc27d21757d4ee9cea0f55a5a1bf097bce1818a80dad75"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:npm/react-dom@19.3.1?package-id=236e0fa38db8b1f7",
+      "dependsOn": [
+        "pkg:npm/scheduler@0.28.0?package-id=6b7299cdb7058247"
+      ]
+    },
+    {
+      "ref": "pkg:npm/textanalyse-web@0.1.0?package-id=7ab1fb9693bde365",
+      "dependsOn": [
+        "pkg:npm/react-dom@19.3.1?package-id=236e0fa38db8b1f7",
+        "pkg:npm/react@19.3.1?package-id=95e8eb51d5109558"
+      ]
+    }
+  ]
+}
