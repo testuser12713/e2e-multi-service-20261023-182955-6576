@@ -1,4 +1,5 @@
-import type { Job } from '../api'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { ApiError, type Job, listJobs } from '../api'
 
 export type UseJobsResult = {
   /** Last successfully loaded list, newest first; kept while a later poll fails. */
@@ -11,18 +12,49 @@ export type UseJobsResult = {
   refresh: () => Promise<void>
 }
 
-const NO_JOBS: Job[] = []
-
-const refreshNothing = (): Promise<void> => Promise.resolve()
+const FALLBACK_ERROR = 'Die API ist nicht erreichbar.'
 
 /**
  * The job list, polled from the API every `intervalMs` milliseconds while the
- * component using it is mounted.
- *
- * Inert in the web skeleton: it returns an empty, settled list and never calls the
- * API. Polling belongs to the ticket 'Implement automatic list refresh'.
+ * component using it is mounted. Results arriving after unmount, or older than a
+ * response already applied, are ignored.
  */
 export function useJobs(intervalMs: number = 3000): UseJobsResult {
-  void intervalMs
-  return { jobs: NO_JOBS, error: null, loading: false, refresh: refreshNothing }
+  const [jobs, setJobs] = useState<Job[]>([])
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState<boolean>(true)
+  const mounted = useRef<boolean>(false)
+  const requestSeq = useRef<number>(0)
+  const appliedSeq = useRef<number>(0)
+
+  const refresh = useCallback(async (): Promise<void> => {
+    const seq = ++requestSeq.current
+    try {
+      const list = await listJobs()
+      if (!mounted.current || seq < appliedSeq.current) return
+      appliedSeq.current = seq
+      setJobs(list)
+      setError(null)
+    } catch (err) {
+      if (!mounted.current || seq < appliedSeq.current) return
+      appliedSeq.current = seq
+      setError(err instanceof ApiError && err.message ? err.message : FALLBACK_ERROR)
+    } finally {
+      if (mounted.current) setLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    mounted.current = true
+    void refresh()
+    const id = setInterval(() => {
+      void refresh()
+    }, intervalMs)
+    return () => {
+      mounted.current = false
+      clearInterval(id)
+    }
+  }, [intervalMs, refresh])
+
+  return { jobs, error, loading, refresh }
 }
